@@ -1,10 +1,27 @@
-name: first workflow
-on: push
-jobs: 
-  Greet:
+name: System Info Workflow
+
+on:
+  push:
+    branches:
+      - main  # You can change this to any branch you want to monitor
+
+jobs:
+  system-info:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Greetings
-        run: echo "Welcome to github actions first workflow"
-      - name: Welcome
-        run: echo "Welcome to github actions 2nd job"
+      - name: 📛 Display Personal Name
+        run: echo "My name is Yarramala Mahesh Babu"
+
+      - name: 📞 Display Personal Number
+        run: echo "Contact: 8247797778"
+
+      - name: 🧠 Check OS Release Info
+        run: cat /etc/os-release
+
+      - name: 🧮 Display CPU Info Summary
+        run: |
+          echo "CPU Model:"
+          grep 'model name' /proc/cpuinfo | head -1
+          echo "Total Cores:"
+          grep -c ^processor /proc/cpuinfo
