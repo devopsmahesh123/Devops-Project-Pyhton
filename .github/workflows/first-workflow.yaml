@@ -1,0 +1,10 @@
+name: first workflow
+on: push
+jobs: 
+  Greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greetings
+        run: echo "Welcome to github actions first workflow"
+      - name: Welcome
+        run: echo "Welcome to github actions 2nd job"
