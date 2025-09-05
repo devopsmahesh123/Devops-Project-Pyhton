@@ -1,0 +1,14 @@
+name: second wrokflow
+on: push
+jobs:
+  second:
+    runs-on: ubuntu-latest
+    steps:
+      - name: personal name
+        run: echo "my name is yarramala mahesh babu"
+      - name: personal number
+        run: echo "8247797778"
+      - name: memory check
+        run: cat /etc/os-release
+      - name: cpu info
+        run: cat /proc/cpuinfo
