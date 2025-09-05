@@ -1,4 +1,4 @@
-ps## 🐳 Docker Commands
+## 🐳 Docker Commands
 
 ### ✅ Build and Tag
 ```bash
