@@ -19,7 +19,9 @@ Once your EC2 instance is ready and Docker is installed:
 
 ```bash
 docker pull devopsmahesh123/python:latest
-docker run -d -p 80:5000 sadeeq/devops-python-app:latest
+docker run -dt --name pythonapp -p 80:5000 devopsmahesh123/python:latest
 ```
 
 Visit `http://<your-ec2-public-ip>` and you’ll see your app live!
+Results: 
+<img width="842" height="260" alt="image" src="https://github.com/user-attachments/assets/85e3ada6-af1b-4b06-bc1b-00422223220b" />
