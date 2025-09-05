@@ -1,17 +1,15 @@
-# Use official Python image
-FROM python:3.11-slim
-
-# Set working directory
+# Stage 1: Build
+FROM python:3.11-slim AS builder
 WORKDIR /app
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
 
-# Copy files
+# Stage 2: Runtime
+FROM python:3.11-slim
+WORKDIR /app
+COPY --from=builder /root/.local /root/.local
+ENV PATH=/root/.local/bin:$PATH
 COPY . .
 
-# Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Expose port
 EXPOSE 5000
-
-# Run the app
-CMD ["python", "app.py"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
