@@ -14,7 +14,7 @@ jobs:
         run: echo "My name is Yarramala Mahesh Babu"
 
       - name: 📞 Display Personal Number
-        run: echo "Contact: 8247797778"
+        run: echo "Contact:8247797778"
 
       - name: 🧠 Check OS Release Info
         run: cat /etc/os-release
